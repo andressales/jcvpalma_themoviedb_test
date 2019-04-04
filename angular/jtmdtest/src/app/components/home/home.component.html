@@ -1,3 +1,30 @@
-<div class="alert alert-primary" role="alert">
-  home works!
+<!-- Marketing Icons Section -->
+<div class="row" id="l_movies">
+
+  <div class="col-lg-6 mb-6" *ngFor="let movie of moviesList">
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2{{movie.poster_path}}" 
+          class="card-img img-base" />
+        </div>
+        <div class="col-md-8">
+          <div class="card-header">
+            <h5 class="card-title">{{movie.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{movie.release_date}}</h6>
+          </div>
+          <div class="card-body">
+            <p class="card-text text-muted">
+             <small>{{movie.overview | slice:0:220}} ...</small>
+            </p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-link btn-sm">More info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /// -->
 </div>
+<!-- /.row -->

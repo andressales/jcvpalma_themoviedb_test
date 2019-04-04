@@ -1,7 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="">
+        <img src="/assets/images/primary-green.svg" alt="The Movie Database (TMDb)" width="81" height="72">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
 
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
-
-
+  <div class="container c-align">
+    <app-filters></app-filters>
+    
+    <div class="row">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
