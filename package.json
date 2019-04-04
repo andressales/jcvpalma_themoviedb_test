@@ -1,6 +1,10 @@
 {
   "name": "jtmdtest",
-  "version": "0.0.0",
+  "description":"JCVPALMA - The Test usig The Movie Database API",
+  "version": "0.0.1",
+  "engines": {
+    "node":"10.14.2"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

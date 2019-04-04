@@ -25,7 +25,7 @@
             "styles": [
               "src/styles.css",
               "src/assets/bootstrap_431/css/bootstrap.min.css",
-              "src/assets/bootstrap_431/booswatch/bootswatch.css"
+              "src/assets/bootstrap_431/booswatch/bootswatch.min.css"
             ],
             "scripts": [
               "src/assets/jquery/jquery-3.3.1.min.js",
