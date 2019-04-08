@@ -43,6 +43,10 @@ export class FiltersComponent implements OnInit {
 
   private _filterStates(value: string): GenreModel[] {
     const filterValue = value.toLowerCase();
-    return this.v_genres.filter( genres => genres.GenreTitle.toLowerCase().indexOf(filterValue) === 0 );
+    return this.v_genres.filter( genres => genres.name.toLowerCase().indexOf(filterValue) === 0 );
+  }
+
+  onSelectGetFilter(event:any){
+    
   }
 }

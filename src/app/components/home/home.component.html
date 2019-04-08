@@ -1,3 +1,30 @@
+<div class="row">
+    
+    <div class="col-md-2">
+      <mat-label>Year</mat-label><br>
+      <mat-select class="form-control">
+        <mat-option *ngFor="let years of v_years" [value]="years">
+          {{years}}
+        </mat-option>
+      </mat-select>
+    </div>
+
+    <div class="col-md-4">
+      <mat-label>Genres</mat-label><br>
+      <mat-select class="form-control" [formControl]="stateCtrl" >
+          <mat-option *ngFor="let genre of v_genres" [value]="genre.id">
+              {{genre.name}}
+            </mat-option>
+      </mat-select>
+    </div>
+    <div class="col-md-4">
+      <button type="button" (click)="onSelectGetFilter($event)" class="btn btn-md btn-primary" style="margin-top: 10px;">
+        <i class="glyphicon glyphicon-search"></i> Search
+      </button>
+    </div>
+</div>
+<br />
+
 <!-- Marketing Icons Section -->
 <div class="row" id="l_movies">
 
@@ -19,7 +46,7 @@
             </p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-link btn-sm">More info</a>
+            <a routerLink="/movie-details/{{movie.id}}" class="btn btn-link btn-sm" target="_blank">More info</a>
           </div>
         </div>
       </div>

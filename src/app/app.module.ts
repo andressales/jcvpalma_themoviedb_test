@@ -30,6 +30,7 @@ import { HomeComponent } from './components/home/home.component';
 import { v_HttpInterceptorProviders } from './interceptors/inde';
 import { FiltersComponent } from './components/filters/filters.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 
 
@@ -38,7 +39,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     HomeComponent,
-    FiltersComponent
+    FiltersComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,

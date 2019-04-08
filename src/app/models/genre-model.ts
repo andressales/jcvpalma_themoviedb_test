@@ -1,4 +1,4 @@
 export class GenreModel {
-    public GenreTitle:string;
-    public GenreNumber:string;
+    public name:string;
+    public id:string;
 }
