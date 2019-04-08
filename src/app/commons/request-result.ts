@@ -6,3 +6,8 @@ export class RequestResult {
     public results: Array<object>;
 
 }
+
+
+export class RequestResultMovieDetail {
+    public movie:Array<object>;
+}

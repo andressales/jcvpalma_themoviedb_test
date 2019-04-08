@@ -10,23 +10,27 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MovieDetailsComponent implements OnInit {
 
-  public movieDetail : MovieDetailModel;
+  public movieDetail = new MovieDetailModel();
   movieId : string;
 
   constructor(
     private route: ActivatedRoute,
     private movieDbService: MovieDatabaseService
   ) { 
+    this.movieDetail = new MovieDetailModel();
     
   }
 
   ngOnInit() {
     this.movieId = this.route.snapshot.paramMap.get("id");
-    
-    this.movieDbService.GetMovieDetail(this.movieId).subscribe( _movie => { this.movieDetail = _movie });
-
-    
-
+    this.movieDbService.GetMovieDetail(this.movieId).then( (_movie:MovieDetailModel) => 
+    { 
+      this.movieDetail = _movie;
+    }).catch( err => {
+        console.log(err);
+    }).finally( () => {
+      console.log(this.movieDetail);
+    });
   }
 
 }

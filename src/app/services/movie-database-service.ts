@@ -20,7 +20,7 @@ export class MovieDatabaseService {
     constructor(
         private http: HttpClient
     ) {
-
+        this.movie_detail = new MovieDetailModel();
     }
 
 
@@ -54,15 +54,10 @@ export class MovieDatabaseService {
     }
     //with_genres
 
-    public GetMovieDetail( MovieId:string ): Observable<MovieDetailModel> {
-        //https://api.themoviedb.org/3/movie/166428?api_key=8129859277bb7335d5a2680aecda0a19&language=en-US
+    public async GetMovieDetail( MovieId:string ): Promise<MovieDetailModel> {
         let v_url = environment.URL_TMDB_API + "movie/"+MovieId+"?api_key=" + environment.API_TMDB_KEY;
-
-        this.http.get(v_url).subscribe((req: MovieDetailModel) => {
-            this.movie_detail = req;
-            return of(this.movie_detail);
-        });
-        return of(this.movie_detail);
+        return await this.http.get(v_url).toPromise<any>();
+        //return of(this.movie_detail);
     }
 
 
