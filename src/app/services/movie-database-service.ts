@@ -28,6 +28,8 @@ export class MovieDatabaseService {
 
         let v_url = environment.URL_TMDB_API + "discover/movie?page=1&include_video=false&include_adult=false&sort_by=popularity.desc&language=en-US&api_key=" + environment.API_TMDB_KEY;
 
+        this.movie_list = new Array<MovieModel>();
+
         this.http.get(v_url).subscribe((req: RequestResult) => {
             if (req.results.length > 0) {
                 req.results.map( (movies : MovieModel) => {
@@ -41,6 +43,8 @@ export class MovieDatabaseService {
 
     public GetMoviesByGenre( id:number ): Observable<Array<MovieModel>> {
         let v_url = environment.URL_TMDB_API + "discover/movie?page=1&with_genres="+id+"&include_video=false&include_adult=false&sort_by=popularity.desc&language=en-US&api_key=" + environment.API_TMDB_KEY;
+
+        this.movie_list = new Array<MovieModel>();
 
         this.http.get(v_url).subscribe((req: RequestResult) => {
             if (req.results.length > 0) {
