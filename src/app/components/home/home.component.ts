@@ -62,10 +62,9 @@ export class HomeComponent implements OnInit {
     this.moviesList = null;
     this.moviesList = new Array<MovieModel>();
 
-    this.movieDbService.GetMovieList().subscribe(_movies => 
-      this.moviesList = _movies.filter( (x:MovieModel) => {
-      return x.genre_ids.indexOf(this.stateCtrl.value);
-    }));
+    this.movieDbService.GetMoviesByGenre(this.stateCtrl.value).subscribe( _movies => {
+      this.moviesList = _movies;
+    });
   }
 
 }
