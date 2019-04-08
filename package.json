@@ -3,7 +3,8 @@
   "description": "JCVPALMA - The Test usig The Movie Database API",
   "version": "0.0.1",
   "engines": {
-    "node": "10.14.2"
+    "node": "10.14.2",
+    "npm": "6.4.1"
   },
   "scripts": {
     "ng": "ng",
@@ -11,7 +12,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "heroku-postinstall": "ng build --prod"
   },
   "private": true,
   "dependencies": {
