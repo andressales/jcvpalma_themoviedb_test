@@ -10,15 +10,23 @@ import {
 
 import { Observable, throwError } from "rxjs";
 import { map, catchError } from 'rxjs/operators';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Injectable()
 export class HeaderInterceptor implements HttpInterceptor {
 
+    constructor(private ngxLoader: NgxUiLoaderService){
+
+    }
+
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
         return next.handle(req).pipe(
             map((event: HttpEvent<any>) => {
+                
+                this.ngxLoader.start();
                 if (event instanceof HttpResponse) {
-
+                    this.ngxLoader.stop();
                 }
                 return event;
             }),
@@ -28,6 +36,7 @@ export class HeaderInterceptor implements HttpInterceptor {
                     reason: error && error.error.reason ? error.error.reason : '',
                     status: error.status
                 };
+                this.ngxLoader.stop();
                 return throwError(error);
             })
         );

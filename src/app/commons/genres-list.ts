@@ -1,6 +1,7 @@
+import { GenreModel } from '../models/genre-model';
 
 
-export const GENRES = [
+export const GENRES:GenreModel[] = [
     { "GenreNumber": "1", "GenreTitle": "Action" },
     { "GenreNumber": "2", "GenreTitle": "Adventure" },
     { "GenreNumber": "3", "GenreTitle": "Animation" },

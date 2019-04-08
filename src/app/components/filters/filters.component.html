@@ -1,29 +1,26 @@
 <div class="row">
-  <div class="col-md-2">
-    <label>Year</label>
-    <select class="form-control" name="v_years" placeholder="Selecione">
-      <option selected value="">Selecione</option>
-      <option *ngFor="let years of v_years">{{years}}</option>
-    </select>
-  </div>
-  <!-- <div class="col-md-2">
-    <label>Sort by</label>
-    <select class="form-control">
-      <option></option>
-    </select>
-  </div> -->
-  <div class="col-md-4">
-    <label>Genres</label>
-    <select class="form-control" name="v_genres" placeholder="Filter by Genres">
-        <option selected value="">Selecione</option>
-        <option *ngFor="let genre of v_genres" values="genre.GenreNumber">{{genre.GenreTitle}}</option>
-    </select>
     
-  </div>
-  <!-- <div class="col-md-4">
-    <label>Keywords</label>
-    <input type="text" class="form-control" />
-  </div> -->
+    <div class="col-md-2">
+      <mat-label>Year</mat-label><br>
+      <mat-select class="form-control">
+        <mat-option *ngFor="let years of v_years" [value]="years">
+          {{years}}
+        </mat-option>
+      </mat-select>
+    </div>
 
+    <div class="col-md-4">
+      <mat-label>Genres</mat-label><br>
+      <input matInput [formControl]="stateCtrl" 
+      class="form-control"
+      placeholder="Genres" aria-label="Genres"
+      [matAutocomplete]="auto" />
+      
+      <mat-autocomplete class="form-control" #auto="matAutocomplete">
+        <mat-option *ngFor="let genre of v_genres" [value]="genre.GenreTitle">
+          {{genre.GenreTitle}}
+        </mat-option>
+      </mat-autocomplete>
+    </div>
 </div>
 <br />
