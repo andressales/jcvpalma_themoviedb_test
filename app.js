@@ -3,7 +3,7 @@ const path = require('path');
 
 const app = express();
 
-app.use(epress.static(__dirname+ '/dist/jtmdtest'));
+app.use(express.static(__dirname+ '/dist/jtmdtest'));
 
 
 app.get('/*', function(req,res){
